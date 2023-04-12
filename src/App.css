@@ -1,0 +1,31 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  margin: 8vh 6vh;
+}
+
+@media (max-width: 27em) {
+  .App-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3vh;
+    margin: 3vh;
+  }
+  .spicial {
+    flex-direction: column;
+    padding: 14px;
+    justify-content: center;
+    align-items: center;
+    gap: 1vh;
+  }
+  .Detect {
+    width: 70%;
+  }
+}
