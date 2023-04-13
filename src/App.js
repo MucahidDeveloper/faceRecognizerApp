@@ -10,35 +10,6 @@ import ImageLinkForm from "./components/ImageLinkForm/ImageLinkForm";
 import Rank from "./components/Rank/Rank";
 import "./App.css";
 
-// const returnClarifiRequestOptions = (imageURL) => {
-//   // setting the api
-//   const PAT = "1f3370ffef2746ecaf30173b787f625c";
-//   const USER_ID = "1mucdeveloper";
-//   const APP_ID = "SmartFacesDetector";
-//   const MODEL_ID = "face-detection";
-//   const IMAGE_URL = imageURL;
-
-//   // setting the JSON
-//   const raw = JSON.stringify({
-//     user_app_id: {
-//       user_id: USER_ID,
-//       app_id: APP_ID,
-//     },
-//     inputs: [{ data: { image: { url: IMAGE_URL } } }],
-//   });
-
-//   //setting request
-//   const requestOptions = {
-//     method: "POST",
-//     headers: {
-//       Accept: "application/json",
-//       Authorization: "Key " + PAT,
-//     },
-//     body: raw,
-//   };
-//   return requestOptions;
-// };
-
 const initialState = {
   input: "",
   imageUrl: "",
@@ -96,7 +67,7 @@ class App extends Component {
 
   onButtonSubmit = () => {
     this.setState({ imageUrl: this.state.input });
-    fetch("http://localhost:3000/imageurl", {
+    fetch("https://mucfacerecognizerback.onrender.com/imageurl", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -106,7 +77,7 @@ class App extends Component {
       .then((response) => response.json())
       .then((response) => {
         if (response) {
-          fetch("http://localhost:3000/image", {
+          fetch("https://mucfacerecognizerback.onrender.com/image", {
             method: "put",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
