@@ -18,14 +18,4 @@
     gap: 3vh;
     margin: 3vh;
   }
-  .spicial {
-    flex-direction: column;
-    padding: 14px;
-    justify-content: center;
-    align-items: center;
-    gap: 1vh;
-  }
-  .Detect {
-    width: 70%;
-  }
 }

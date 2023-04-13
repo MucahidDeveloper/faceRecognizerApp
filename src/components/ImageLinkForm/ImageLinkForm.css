@@ -30,3 +30,16 @@
   background: linear-gradient(89deg, #8a2387 0%, #e94057 50%, #f27121 100%);
   border: purple;
 }
+
+@media (max-width: 27em) {
+  .spicial {
+    flex-direction: column;
+    padding: 14px;
+    justify-content: center;
+    align-items: center;
+    gap: 1vh;
+  }
+  .Detect {
+    width: 70%;
+  }
+}
