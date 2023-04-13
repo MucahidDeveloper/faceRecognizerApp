@@ -29,6 +29,7 @@
 .Detect {
   background: linear-gradient(89deg, #8a2387 0%, #e94057 50%, #f27121 100%);
   border: purple;
+  width: 30%;
 }
 
 @media (max-width: 27em) {

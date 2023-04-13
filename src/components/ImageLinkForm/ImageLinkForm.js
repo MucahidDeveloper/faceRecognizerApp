@@ -16,7 +16,7 @@ const ImageLinkForm = ({ onInputChange, onButtonSubmit }) => {
             placeholder="Enter your image's URL"
           />
           <button
-            className="w-30 grow f4 link ph3 pv2 dib white bg-light-purple Detect"
+            className="grow f4 link ph3 pv2 dib white bg-light-purple Detect"
             onClick={onButtonSubmit}
           >
             Detect
