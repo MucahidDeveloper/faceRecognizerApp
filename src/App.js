@@ -43,24 +43,24 @@ class App extends Component {
     });
   };
 
-    calculateFaceLocation=(data)=>{
-    const image=document.getElementById('inputimage');
-    const width=Number(image.width);
-    const height=Number(image.height);
-    const faceRegions=data.outputs[0].data.regions;
-    const clarifaiFaces=faceRegions.map(region=>{
+  calculateFaceLocation = (data) => {
+    const image = document.getElementById("inputimage");
+    const width = Number(image.width);
+    const height = Number(image.height);
+    const faceRegions = data.outputs[0].data.regions;
+    const clarifaiFaces = faceRegions.map((region) => {
       return region.region_info.bounding_box;
-    })
-    const boxes=clarifaiFaces.map(bounding_box=>{
-      return{
+    });
+    const boxes = clarifaiFaces.map((bounding_box) => {
+      return {
         leftCol: bounding_box.left_col * width,
-        rightCol: width - (bounding_box.right_col * width),
+        rightCol: width - bounding_box.right_col * width,
         topRow: bounding_box.top_row * height,
-        bottomRow: height - (bounding_box.bottom_row * height)
-      }
-    })
+        bottomRow: height - bounding_box.bottom_row * height,
+      };
+    });
     return boxes;
-  }
+  };
 
   displayFaceBox = (boxes) => {
     this.setState({ boxes: boxes });
@@ -133,7 +133,7 @@ class App extends Component {
                 onInputChange={this.onInputChange}
                 onButtonSubmit={this.onButtonSubmit}
               />
-              <FaceRecognition box={box} imageUrl={imageUrl} />
+              <FaceRecognition boxes={boxes} imageUrl={imageUrl} />
             </div>
           ) : route === "signin" ? (
             <Signin
