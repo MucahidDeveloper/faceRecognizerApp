@@ -113,7 +113,7 @@ class App extends Component {
     return (
       <>
         <div className="App">
-          <ParticlesBg type="cobweb" num={175} bg={true} />
+          <ParticlesBg type="cobweb" num={125} bg={true} />
           <div className="App-header">
             <Navigation
               isSignedIn={isSignedIn}
